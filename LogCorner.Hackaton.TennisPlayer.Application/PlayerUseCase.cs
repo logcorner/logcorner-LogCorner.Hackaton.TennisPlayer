@@ -1,9 +1,9 @@
-﻿using LogCorner.Hackaton.TennisPlayer.Domain;
+﻿using LogCorner.Hackaton.TennisPlayer.Application.Exceptions;
+using LogCorner.Hackaton.TennisPlayer.Domain;
 using LogCorner.Hackaton.TennisPlayer.Infrastructure;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LogCorner.Hackaton.TennisPlayer.Application.Exceptions;
 
 namespace LogCorner.Hackaton.TennisPlayer.Application
 {
@@ -20,7 +20,7 @@ namespace LogCorner.Hackaton.TennisPlayer.Application
         {
             var result = await Repo.GetAsync();
 
-            return result.OrderBy(r=>r.Id);
+            return result.OrderBy(r => r.Id);
         }
 
         public async Task<Player> Handle(PlayerRequest playerRequest)

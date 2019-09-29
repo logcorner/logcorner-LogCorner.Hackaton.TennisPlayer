@@ -110,13 +110,12 @@ namespace LogCorner.Hackaton.TennisPlayer.Application.Specs
             await Assert.ThrowsAsync<ArgumentNullApplicationException>(() => sut.Handle(null));
         }
 
-
         [Fact(DisplayName = "deleteplayer usecase when result is  null  should raise argumentnullapplicationexception")]
         public async Task DeletePlayerUseCaseWhenResultIsNullShouldRaiseArgumentNullApplicationException()
         {
             //Arrange
             Mock<IPlayerRepository> mockPlayerRepository = new Mock<IPlayerRepository>();
-            mockPlayerRepository.Setup(m => m.GetAsync(It.IsAny<int>())).Returns((Task<Player>) null);
+            mockPlayerRepository.Setup(m => m.GetAsync(It.IsAny<int>())).Returns((Task<Player>)null);
 
             //Act
             //Assert
