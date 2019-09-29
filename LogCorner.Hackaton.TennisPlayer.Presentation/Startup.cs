@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace LogCorner.Hackaton.TennisPlayer.Presentation
 {
@@ -25,7 +26,17 @@ namespace LogCorner.Hackaton.TennisPlayer.Presentation
             services.AddScoped<IGetPlayersUsesCase, PlayerUseCase>();
             services.AddScoped<IGetPlayerUsesCase, PlayerUseCase>();
             services.AddScoped<IDeletePlayerUsesCase, PlayerUseCase>();
-         
+            services.AddSwaggerGen(options =>
+            {
+                options.DescribeAllEnumsAsStrings();
+                options.SwaggerDoc("v1", new Info
+                {
+                    Title = "Tennis Player Service HTTP API",
+                    Version = "v1",
+                    Description = "Tennis Player Service HTTP API",
+                    TermsOfService = "Terms Of Service"
+                });
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -37,6 +48,11 @@ namespace LogCorner.Hackaton.TennisPlayer.Presentation
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tennis Player Service HTTP API V1");
+            });
             app.UseMvc();
         }
     }
