@@ -24,6 +24,10 @@ namespace LogCorner.Hackaton.TennisPlayer.Presentation
             services.AddScoped<IGetPlayersUsesCase, PlayerUseCase>();
             services.AddScoped<IGetPlayerUsesCase, PlayerUseCase>();
             services.AddScoped<IDeletePlayerUsesCase, PlayerUseCase>();
+            services.AddScoped<IDatabaseProvider, JsonDatabaseProvider>();
+            services.AddScoped<IFileProvider, FileProvider>();
+            services.AddScoped<IJsonProvider, JsonProvider>();
+
             services.AddSwaggerGen(options =>
             {
                 options.DescribeAllEnumsAsStrings();

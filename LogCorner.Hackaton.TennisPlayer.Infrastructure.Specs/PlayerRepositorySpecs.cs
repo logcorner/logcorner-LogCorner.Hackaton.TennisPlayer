@@ -1,5 +1,4 @@
 ﻿using LogCorner.Hackaton.TennisPlayer.Domain;
-using Microsoft.Extensions.Configuration;
 using Moq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -13,15 +12,13 @@ namespace LogCorner.Hackaton.TennisPlayer.Infrastructure.Specs
         public async Task GetAsyncShoulReturnListOfPlayers()
         {
             //Arrange
-            Mock<IConfiguration> moqIConfiguration = new Mock<IConfiguration>();
-            string fullFilePath = "";
-            moqIConfiguration.Setup(m => m[It.IsAny<string>()]).Returns(fullFilePath);
+            Mock<IDatabaseProvider> moqDatabaseProvider = new Mock<IDatabaseProvider>();
             List<Player> players = new List<Player>
             {
                 new Player(2, "name2", "surname2", "M", It.IsAny<Country>(), "", It.IsAny<Data>())
             };
-
-            var sut = new JsonPlayerRepository(moqIConfiguration.Object);
+            moqDatabaseProvider.Setup(d => d.GetPlayers()).Returns(players);
+            var sut = new JsonPlayerRepository(moqDatabaseProvider.Object);
 
             //Act
             var result = await sut.GetAsync();

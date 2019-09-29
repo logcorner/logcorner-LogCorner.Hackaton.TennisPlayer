@@ -1,9 +1,6 @@
 ﻿using LogCorner.Hackaton.TennisPlayer.Domain;
 using LogCorner.Hackaton.TennisPlayer.Infrastructure.Exceptions;
-using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,68 +8,40 @@ namespace LogCorner.Hackaton.TennisPlayer.Infrastructure
 {
     public class JsonPlayerRepository : IPlayerRepository
     {
-        private readonly IConfiguration _configuration;
+        private readonly IDatabaseProvider _db;
 
-        public JsonPlayerRepository( IConfiguration configuration)
+        public JsonPlayerRepository(IDatabaseProvider db)
         {
-            _configuration = configuration;
-        }
-
-        private string GetConnectionString()
-        {
-            var fullFilePath = _configuration["ConnectionStrings:FullFilePath"];
-
-            if (!File.Exists(fullFilePath))
-            {
-                throw new FilePathNotFoundException($"file not found {fullFilePath}");
-            }
-            return fullFilePath;
-        }
-
-        private List<Player> GetPlayers()
-        {
-            var json = File.ReadAllText(GetConnectionString());
-            var players = JsonConvert.DeserializeObject<List<Player>>(json);
-            return players;
-        }
-
-        public async Task DeleteAsync(int id)
-        {
-            var players = GetPlayers();
-            var player = players.FirstOrDefault(p => p.Id == id);
-            if (player == null)
-            {
-                throw new PlayerNotFoundException($"player with id {id} does not exist");
-            }
-
-            players.Remove(player);
-
-            WriteDataToJson(players);
-            await Task.FromResult(players);
+            _db = db;
         }
 
         public async Task<IEnumerable<Player>> GetAsync()
         {
-            var players = GetPlayers();
+            var players = _db.GetPlayers();
 
             return await Task.FromResult(players);
         }
 
         public async Task<Player> GetAsync(int id)
         {
-            var players = GetPlayers();
+            var players = _db.GetPlayers();
             var player = players.FirstOrDefault(p => p.Id == id);
-            return await Task.FromResult(player);
+            return await Task.FromResult(player); ;
         }
 
-        private void WriteDataToJson(List<Player> players)
+        public async Task DeleteAsync(int id)
         {
-            if (players == null)
+            var players = _db.GetPlayers();
+            var player = players.FirstOrDefault(p => p.Id == id);
+            if (player == null)
             {
-                throw new NullPlayersException(nameof(players));
+                throw new PlayerNotFoundException($"player with id = {id} does not exist");
             }
-            var json = JsonConvert.SerializeObject(players, Formatting.Indented);
-            File.WriteAllText(GetConnectionString(), json);
+
+            players.Remove(player);
+
+            _db.WriteDataToJson(players);
+            await Task.FromResult(players);
         }
     }
 }
