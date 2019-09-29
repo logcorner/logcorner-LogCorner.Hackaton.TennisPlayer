@@ -1,7 +1,6 @@
 ﻿using LogCorner.Hackaton.TennisPlayer.Domain;
 using Microsoft.Extensions.Configuration;
 using Moq;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
