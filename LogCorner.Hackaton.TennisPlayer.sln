@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{AAA935F2-C567-4306-A8D1-2D15280C0368}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogCorner.Hackaton.TennisPlayer.Domain", "LogCorner.Hackaton.TennisPlayer.Domain\LogCorner.Hackaton.TennisPlayer.Domain.csproj", "{8397D2E3-6AE9-4AFB-921C-37AA6DB1ED1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogCorner.Hackaton.TennisPlayer.Domain.Specs", "LogCorner.Hackaton.TennisPlayer.Domain.Specs\LogCorner.Hackaton.TennisPlayer.Domain.Specs.csproj", "{5BBEC0F4-9D26-4849-8A55-7122F21918E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{40C0F8F6-530D-4FFA-816C-9A33151573EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogCorner.Hackaton.TennisPlayer.Application", "LogCorner.Hackaton.TennisPlayer.Application\LogCorner.Hackaton.TennisPlayer.Application.csproj", "{7FD8C410-61F0-4634-BCE9-1ABCD2688161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogCorner.Hackaton.TennisPlayer.Application.Specs", "LogCorner.Hackaton.TennisPlayer.Application.Specs\LogCorner.Hackaton.TennisPlayer.Application.Specs.csproj", "{3423F4EC-3DE3-4996-B274-3DF47DA8D9E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9E35F79C-4DAE-40C5-8353-98BAE7154D63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogCorner.Hackaton.TennisPlayer.Infrastructure", "LogCorner.Hackaton.TennisPlayer.Infrastructure\LogCorner.Hackaton.TennisPlayer.Infrastructure.csproj", "{2603F26C-4BAF-4894-A81E-81EAF7AD0701}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogCorner.Hackaton.TennisPlayer.Infrastructure.Specs", "LogCorner.Hackaton.TennisPlayer.Infrastructure.Specs\LogCorner.Hackaton.TennisPlayer.Infrastructure.Specs.csproj", "{A9A837D2-F56C-4049-A910-059FC638F0AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{66314BE7-4930-4AAB-8A81-AF3F8414108B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogCorner.Hackaton.TennisPlayer.Presentation", "LogCorner.Hackaton.TennisPlayer.Presentation\LogCorner.Hackaton.TennisPlayer.Presentation.csproj", "{E7FEC8BE-8F47-4E95-801B-134DAEB0B659}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogCorner.Hackaton.TennisPlayer.Presentation.Specs", "LogCorner.Hackaton.TennisPlayer.Presentation.Specs\LogCorner.Hackaton.TennisPlayer.Presentation.Specs.csproj", "{E93C5682-944B-42D7-ACFF-E11506CDA057}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8397D2E3-6AE9-4AFB-921C-37AA6DB1ED1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8397D2E3-6AE9-4AFB-921C-37AA6DB1ED1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8397D2E3-6AE9-4AFB-921C-37AA6DB1ED1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8397D2E3-6AE9-4AFB-921C-37AA6DB1ED1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BBEC0F4-9D26-4849-8A55-7122F21918E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BBEC0F4-9D26-4849-8A55-7122F21918E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BBEC0F4-9D26-4849-8A55-7122F21918E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BBEC0F4-9D26-4849-8A55-7122F21918E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FD8C410-61F0-4634-BCE9-1ABCD2688161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD8C410-61F0-4634-BCE9-1ABCD2688161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD8C410-61F0-4634-BCE9-1ABCD2688161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD8C410-61F0-4634-BCE9-1ABCD2688161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3423F4EC-3DE3-4996-B274-3DF47DA8D9E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3423F4EC-3DE3-4996-B274-3DF47DA8D9E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3423F4EC-3DE3-4996-B274-3DF47DA8D9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3423F4EC-3DE3-4996-B274-3DF47DA8D9E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2603F26C-4BAF-4894-A81E-81EAF7AD0701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2603F26C-4BAF-4894-A81E-81EAF7AD0701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2603F26C-4BAF-4894-A81E-81EAF7AD0701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2603F26C-4BAF-4894-A81E-81EAF7AD0701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9A837D2-F56C-4049-A910-059FC638F0AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9A837D2-F56C-4049-A910-059FC638F0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9A837D2-F56C-4049-A910-059FC638F0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9A837D2-F56C-4049-A910-059FC638F0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7FEC8BE-8F47-4E95-801B-134DAEB0B659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7FEC8BE-8F47-4E95-801B-134DAEB0B659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7FEC8BE-8F47-4E95-801B-134DAEB0B659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7FEC8BE-8F47-4E95-801B-134DAEB0B659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E93C5682-944B-42D7-ACFF-E11506CDA057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E93C5682-944B-42D7-ACFF-E11506CDA057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E93C5682-944B-42D7-ACFF-E11506CDA057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E93C5682-944B-42D7-ACFF-E11506CDA057}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8397D2E3-6AE9-4AFB-921C-37AA6DB1ED1B} = {AAA935F2-C567-4306-A8D1-2D15280C0368}
+		{5BBEC0F4-9D26-4849-8A55-7122F21918E2} = {AAA935F2-C567-4306-A8D1-2D15280C0368}
+		{7FD8C410-61F0-4634-BCE9-1ABCD2688161} = {40C0F8F6-530D-4FFA-816C-9A33151573EE}
+		{3423F4EC-3DE3-4996-B274-3DF47DA8D9E5} = {40C0F8F6-530D-4FFA-816C-9A33151573EE}
+		{2603F26C-4BAF-4894-A81E-81EAF7AD0701} = {9E35F79C-4DAE-40C5-8353-98BAE7154D63}
+		{A9A837D2-F56C-4049-A910-059FC638F0AF} = {9E35F79C-4DAE-40C5-8353-98BAE7154D63}
+		{E7FEC8BE-8F47-4E95-801B-134DAEB0B659} = {66314BE7-4930-4AAB-8A81-AF3F8414108B}
+		{E93C5682-944B-42D7-ACFF-E11506CDA057} = {66314BE7-4930-4AAB-8A81-AF3F8414108B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {590B64D9-7324-4021-ABDE-ABD14CED56EB}
+	EndGlobalSection
+EndGlobal
