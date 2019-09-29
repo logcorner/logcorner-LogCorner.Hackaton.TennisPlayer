@@ -43,6 +43,11 @@ namespace LogCorner.Hackaton.TennisPlayer.Application
             {
                 throw new ArgumentNullApplicationException(nameof(deletePlayerCommand));
             }
+            var player = Repo.GetAsync(deletePlayerCommand.Id);
+            if (player == null)
+            {
+                throw new PlayerNotFoundException($"player with id = {deletePlayerCommand.Id} does not exist");
+            }
             await Repo.DeleteAsync(deletePlayerCommand.Id);
         }
     }
