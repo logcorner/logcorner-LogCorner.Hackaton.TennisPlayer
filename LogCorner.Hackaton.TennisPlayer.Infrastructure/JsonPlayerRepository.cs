@@ -62,7 +62,7 @@ namespace LogCorner.Hackaton.TennisPlayer.Infrastructure
         {
             var players = GetPlayers();
             var player = players.FirstOrDefault(p => p.Id == id);
-            return await Task.FromResult(player); ;
+            return await Task.FromResult(player);
         }
 
         private void WriteDataToJson(List<Player> players)
