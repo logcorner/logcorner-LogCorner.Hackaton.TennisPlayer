@@ -42,7 +42,7 @@ namespace LogCorner.Hackaton.TennisPlayer.Infrastructure
             var player = players.FirstOrDefault(p => p.Id == id);
             if (player == null)
             {
-                throw new PlayerNotFoundException($"player with id = {id} does not exist");
+                throw new PlayerNotFoundException($"player with id {id} does not exist");
             }
 
             players.Remove(player);

@@ -32,7 +32,7 @@ namespace LogCorner.Hackaton.TennisPlayer.Application
             var result = await Repo.GetAsync(playerRequest.Id);
             if (result == null)
             {
-                throw new PlayerNotFoundException($"player with id = {playerRequest.Id} does not exist");
+                throw new PlayerNotFoundException($"player with id  {playerRequest.Id} does not exist");
             }
             return result;
         }
@@ -46,7 +46,7 @@ namespace LogCorner.Hackaton.TennisPlayer.Application
             var player = Repo.GetAsync(deletePlayerCommand.Id);
             if (player == null)
             {
-                throw new PlayerNotFoundException($"player with id = {deletePlayerCommand.Id} does not exist");
+                throw new PlayerNotFoundException($"player with id  {deletePlayerCommand.Id} does not exist");
             }
             await Repo.DeleteAsync(deletePlayerCommand.Id);
         }

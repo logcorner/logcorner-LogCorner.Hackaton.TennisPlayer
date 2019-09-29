@@ -1,5 +1,6 @@
 ﻿using LogCorner.Hackaton.TennisPlayer.Application;
 using LogCorner.Hackaton.TennisPlayer.Infrastructure;
+using LogCorner.Hackaton.TennisPlayer.Presentation.Exceptions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -50,6 +51,8 @@ namespace LogCorner.Hackaton.TennisPlayer.Presentation
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tennis Player Service HTTP API V1");
             });
+
+            app.UseMiddleware<ExceptionMiddleware>();
             app.UseMvc();
         }
     }
