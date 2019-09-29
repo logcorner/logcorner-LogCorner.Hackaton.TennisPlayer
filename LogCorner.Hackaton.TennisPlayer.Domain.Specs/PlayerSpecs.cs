@@ -16,7 +16,7 @@ namespace LogCorner.Hackaton.TennisPlayer.Domain.Specs
             string picture = "https://i.eurosport.com/_iss_/person/pp_clubteam/large/565920.jpg";
 
             Country country = new Country(It.IsAny<string>(), It.IsAny<string>());
-            Data data = new Data();
+            Data data = new Data(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int[]>());
 
             //Act
             var sut = new Player(id, firstname, lastname, sex, country, picture, data);
