@@ -1,5 +1,8 @@
 ﻿namespace LogCorner.Hackaton.TennisPlayer.Domain
 {
+    /// <summary>
+    /// Holds informations related to the player
+    /// </summary>
     public class Player
     {
         public int Id { get; }

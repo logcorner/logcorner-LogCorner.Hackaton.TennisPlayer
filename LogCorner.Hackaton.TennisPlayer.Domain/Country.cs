@@ -1,5 +1,8 @@
 ﻿namespace LogCorner.Hackaton.TennisPlayer.Domain
 {
+    /// <summary>
+    /// Holds informations related to country
+    /// </summary>
     public class Country
     {
         public string Picture { get; }

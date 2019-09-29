@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
+﻿using Xunit;
 
 namespace LogCorner.Hackaton.TennisPlayer.Domain.Specs
 {
@@ -29,6 +26,5 @@ namespace LogCorner.Hackaton.TennisPlayer.Domain.Specs
             Assert.Equal(age, sut.Age);
             Assert.Equal(last, sut.Last);
         }
-
     }
 }

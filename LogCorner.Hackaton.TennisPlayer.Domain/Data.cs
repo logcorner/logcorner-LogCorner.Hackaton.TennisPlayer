@@ -1,5 +1,8 @@
 ﻿namespace LogCorner.Hackaton.TennisPlayer.Domain
 {
+    /// <summary>
+    /// Holds informations related to data of player
+    /// </summary>
     public class Data
     {
         public int Rank { get; }

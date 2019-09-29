@@ -28,6 +28,7 @@ namespace LogCorner.Hackaton.TennisPlayer.Domain.Specs
             Assert.Equal(sex, sut.Sex);
             Assert.Equal(country, sut.Country);
             Assert.Equal(data, sut.Data);
+            Assert.Equal(picture, sut.Picture);
         }
     }
 }
