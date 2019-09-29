@@ -30,7 +30,10 @@ namespace LogCorner.Hackaton.TennisPlayer.Application
                 throw new ArgumentNullApplicationException(nameof(playerRequest));
             }
             var result = await Repo.GetAsync(playerRequest.Id);
-
+            if (result == null)
+            {
+                throw new PlayerNotFoundException($"player with id = {playerRequest.Id} does not exist");
+            }
             return result;
         }
 

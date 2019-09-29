@@ -47,6 +47,21 @@ namespace LogCorner.Hackaton.TennisPlayer.Application.Specs
             await Assert.ThrowsAsync<ArgumentNullApplicationException>(() => sut.Handle(null));
         }
 
+        [Fact(DisplayName = "getplayer usecase when  result is null should raise PlayerNotFoundException")]
+        public async Task GetPlayerUseCaseWhenResultIsNullShouldRaisePlayerNotFoundException()
+        {
+            //Arrange
+            Mock<IPlayerRepository> mockPlayerRepository = new Mock<IPlayerRepository>();
+
+         
+            mockPlayerRepository.Setup(m => m.GetAsync(It.IsAny<int>())).Returns(Task.FromResult((Player)null));
+
+            //Act
+            //Assert
+            IGetPlayerUsesCase sut = new PlayerUseCase(mockPlayerRepository.Object);
+            await Assert.ThrowsAsync<PlayerNotFoundException>(() => sut.Handle(new PlayerRequest(It.IsAny<int>())));
+        }
+
         [Fact(DisplayName = "getplayer usecase should return one player")]
         public async Task GetPlayerUseCaseShouldReturnOnePlayer()
         {
