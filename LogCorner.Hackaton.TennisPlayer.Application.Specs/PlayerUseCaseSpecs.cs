@@ -64,5 +64,23 @@ namespace LogCorner.Hackaton.TennisPlayer.Application.Specs
             //Assert
             Assert.Equal(player, result);
         }
+
+        [Fact(DisplayName = "DeletePlayer UseCase Should Call Delete On Repository")]
+        public async Task DeletePlayerUseCaseShouldCallDeleteOnRepository()
+        {
+            //Arrange
+            Mock<IPlayerRepository> mockPlayerRepository = new Mock<IPlayerRepository>();
+
+            var player = new Player(2, "name2", "surname2", "M", It.IsAny<Country>(), "", It.IsAny<Data>());
+
+            mockPlayerRepository.Setup(m => m.DeleteAsync(It.IsAny<int>())).Verifiable();
+
+            //Act
+            IDeletePlayerUsesCase sut = new PlayerUseCase(mockPlayerRepository.Object);
+            await sut.Handle(new DeletePlayerCommand(player.Id));
+
+            //Assert
+            mockPlayerRepository.Verify(r => r.DeleteAsync(It.IsAny<int>()), Times.Once);
+        }
     }
 }

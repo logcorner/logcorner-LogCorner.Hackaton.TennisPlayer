@@ -1,6 +1,6 @@
 ﻿namespace LogCorner.Hackaton.TennisPlayer.Application
 {
-    public interface IRequest
+    public interface ICommand
     {
     }
 }

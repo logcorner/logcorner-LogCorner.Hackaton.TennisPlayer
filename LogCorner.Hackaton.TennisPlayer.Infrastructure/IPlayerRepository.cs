@@ -9,5 +9,7 @@ namespace LogCorner.Hackaton.TennisPlayer.Infrastructure
         Task<IEnumerable<Player>> GetAsync();
 
         Task<Player> GetAsync(int id);
+
+        Task DeleteAsync(int id);
     }
 }

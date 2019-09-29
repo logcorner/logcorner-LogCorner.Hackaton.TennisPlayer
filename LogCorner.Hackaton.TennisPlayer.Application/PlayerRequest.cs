@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using LogCorner.Hackaton.TennisPlayer.Domain;
+﻿using LogCorner.Hackaton.TennisPlayer.Domain;
+using System.Threading.Tasks;
 
 namespace LogCorner.Hackaton.TennisPlayer.Application
 {

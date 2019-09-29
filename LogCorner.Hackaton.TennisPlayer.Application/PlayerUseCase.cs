@@ -7,7 +7,7 @@ using LogCorner.Hackaton.TennisPlayer.Application.Exceptions;
 
 namespace LogCorner.Hackaton.TennisPlayer.Application
 {
-    public class PlayerUseCase : IGetPlayersUsesCase, IGetPlayerUsesCase
+    public class PlayerUseCase : IGetPlayersUsesCase, IGetPlayerUsesCase, IDeletePlayerUsesCase
     {
         private IPlayerRepository Repo { get; }
 
@@ -32,6 +32,11 @@ namespace LogCorner.Hackaton.TennisPlayer.Application
             var result = await Repo.GetAsync(playerRequest.Id);
 
             return result;
+        }
+
+        public async Task Handle(DeletePlayerCommand deletePlayerCommand)
+        {
+            await Repo.DeleteAsync(deletePlayerCommand.Id);
         }
     }
 }
