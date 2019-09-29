@@ -15,7 +15,7 @@ namespace LogCorner.Hackaton.TennisPlayer.Domain.Specs
             string sex = "M";
             string picture = "https://i.eurosport.com/_iss_/person/pp_clubteam/large/565920.jpg";
 
-            Country country = new Country();
+            Country country = new Country(It.IsAny<string>(), It.IsAny<string>());
             Data data = new Data();
 
             //Act
