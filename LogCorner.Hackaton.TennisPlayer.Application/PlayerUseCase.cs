@@ -39,6 +39,10 @@ namespace LogCorner.Hackaton.TennisPlayer.Application
 
         public async Task Handle(DeletePlayerCommand deletePlayerCommand)
         {
+            if (deletePlayerCommand == null)
+            {
+                throw new ArgumentNullApplicationException(nameof(deletePlayerCommand));
+            }
             await Repo.DeleteAsync(deletePlayerCommand.Id);
         }
     }
