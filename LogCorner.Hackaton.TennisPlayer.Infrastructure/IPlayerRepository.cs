@@ -7,5 +7,7 @@ namespace LogCorner.Hackaton.TennisPlayer.Infrastructure
     public interface IPlayerRepository
     {
         Task<IEnumerable<Player>> GetAsync();
+
+        Task<Player> GetAsync(int id);
     }
 }
